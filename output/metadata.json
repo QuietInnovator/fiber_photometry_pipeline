@@ -1,0 +1,300 @@
+{
+  "Light": {
+    "Led410Enable": true,
+    "Led470Enable": true,
+    "Led560Enable": false,
+    "Led410Value": 25.77922077922074,
+    "Led470Value": 60.0,
+    "Led560Value": 23.0
+  },
+  "Excitation": {
+    "mode": 1,
+    "discontinuous": false,
+    "interval_time": 20,
+    "continuous_time": 20
+  },
+  "Channels": [
+    {
+      "Name": "CH1",
+      "Roi1": "243.123943661971;150.098591549295;184.332394366197;184.332394366197",
+      "Roi2": "277.985915492957;185.985915492958;184.332394366197;184.332394366197"
+    }
+  ],
+  "AllMarking": [
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "start",
+      "Levels": 0,
+      "color": "#FF8064A2",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "cocaine",
+      "Levels": 0,
+      "color": "#FFF79646",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "foot shock",
+      "Levels": 0,
+      "color": "#FF000000",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "lick",
+      "Levels": 0,
+      "color": "#FFC4BD96",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "TimeOFF",
+      "Levels": 0,
+      "color": "#FF31859B",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "1st lat",
+      "Levels": 0,
+      "color": "#FF4BACC6",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "2nd lat",
+      "Levels": 0,
+      "color": "#FF938953",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "bridge entry",
+      "Levels": 0,
+      "color": "#FFE6E0EC",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "Event9",
+      "Levels": 0,
+      "color": "#FF0099FF",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 1,
+      "opened": true,
+      "name": "Event10",
+      "Levels": 0,
+      "color": "#FF0099FF",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 2,
+      "opened": true,
+      "name": "Input1",
+      "Levels": 0,
+      "color": "#FFFF0000",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 2,
+      "opened": true,
+      "name": "Input2",
+      "Levels": 0,
+      "color": "#FF000000",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 2,
+      "opened": true,
+      "name": "Input3",
+      "Levels": 0,
+      "color": "#FFC0504D",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 2,
+      "opened": true,
+      "name": "Input4",
+      "Levels": 0,
+      "color": "#FFF79646",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "AllChannel",
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 0,
+      "opened": true,
+      "name": "rect",
+      "Levels": 0,
+      "color": "#FF0099FF",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 0,
+      "opened": true,
+      "name": "bridge",
+      "Levels": 0,
+      "color": "#FFFFFF00",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "CH1"
+      ],
+      "enable": true
+    },
+    {
+      "id": 0,
+      "type": 0,
+      "opened": true,
+      "name": "circle",
+      "Levels": 0,
+      "color": "#FFFF0000",
+      "key": 0,
+      "threshold": 0.0,
+      "all": true,
+      "channels": [
+        "CH1"
+      ],
+      "enable": true
+    }
+  ],
+  "Fps": 100.0,
+  "detected_channels": [
+    "CH1-410",
+    "CH1-470"
+  ],
+  "dual_channel": true
+}
