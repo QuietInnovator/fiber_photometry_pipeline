@@ -1,0 +1,52 @@
+# Fiber Photometry Analysis Configuration
+
+# Input/Output settings
+input_file: "Fluorescence.csv"
+output_dir: "output"
+
+# Data acquisition parameters
+fps: 100.0  # Frames per second (will be validated against metadata)
+channels:
+  - "470"  # Signal channel (GCaMP, etc.)
+  - "410"  # Isosbestic control channel
+
+# Preprocessing parameters
+preprocessing:
+  trim_led_artifact: 1.0  # Seconds to trim from start (LED stabilization)
+  filter_window: 0.5      # Moving average window in seconds (0 = disable)
+  butterworth_order: 4    # Butterworth filter order (if used)
+  remove_bad_segments: false  # Manual bad segment removal (interactive)
+
+# Normalization parameters
+normalization:
+  method: "control_fit"  # "control_fit", "baseline_fit", or "detrend"
+  baseline_percentile: 10  # For baseline fitting methods
+  
+# Event analysis parameters
+event_analysis:
+  psth_window: [-3.0, 5.0]     # Pre/post event window in seconds
+  baseline_window: [-1.0, 0.0] # Baseline window for correction
+  events:
+    - "cocaine"
+    - "foot shock" 
+    - "lick"
+    - "start"
+
+# Transient detection parameters
+transient_detection:
+  method: "mad"           # "mad", "std", or "threshold"
+  mad_threshold: 3.5      # MAD-based detection threshold
+  min_peak_distance: 1.0  # Minimum distance between peaks (seconds)
+  min_peak_width: 0.1     # Minimum peak width (seconds)
+  
+# Visualization parameters
+visualization:
+  figure_format: ["png", "svg"]  # Output formats
+  dpi: 300                       # Figure resolution
+  style: "seaborn-v0_8"         # Matplotlib style
+  
+# Quality control parameters
+quality_control:
+  validate_fps: true      # Validate FPS against timestamp intervals
+  check_data_gaps: true   # Check for missing data points
+  report_outliers: true   # Report potential outlier detection
