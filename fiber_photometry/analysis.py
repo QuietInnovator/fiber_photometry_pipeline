@@ -178,10 +178,17 @@ class EventAnalyzer:
         # Area under curve (trapezoidal integration)
         valid_mask = ~np.isnan(trial_data)
         if np.sum(valid_mask) > 1:
-            metrics['auc'] = integrate.trapz(
-                trial_data[valid_mask], 
-                time_vec[valid_mask]
-            )
+            # Use trapezoid for newer scipy versions, fallback to trapz for older versions
+            try:
+                metrics['auc'] = integrate.trapezoid(
+                    trial_data[valid_mask], 
+                    time_vec[valid_mask]
+                )
+            except AttributeError:
+                metrics['auc'] = integrate.trapz(
+                    trial_data[valid_mask], 
+                    time_vec[valid_mask]
+                )
         
         # Peak detection
         if np.any(~np.isnan(trial_data)):
@@ -519,9 +526,15 @@ class TransientAnalyzer:
             transient_time = time_vec[left_base:right_base + 1]
             
             if len(transient_data) > 1:
-                transient['area_under_curve'] = integrate.trapz(
-                    transient_data, transient_time
-                )
+                # Use trapezoid for newer scipy versions, fallback to trapz for older versions
+                try:
+                    transient['area_under_curve'] = integrate.trapezoid(
+                        transient_data, transient_time
+                    )
+                except AttributeError:
+                    transient['area_under_curve'] = integrate.trapz(
+                        transient_data, transient_time
+                    )
             
             # Rise and decay times
             transient['rise_time'] = (peak_idx - left_base) / self.fps
