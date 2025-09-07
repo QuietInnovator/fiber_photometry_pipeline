@@ -15,6 +15,7 @@ import click
 import yaml
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 from .parser import FluorescenceParser
@@ -359,11 +360,11 @@ def main(
         if processed_410 is not None:
             dff, dff_info = normalizer.calculate_dff(
                 processed_470, processed_410, 
-                method=config['normalization']['method']
+                baseline_method=config['normalization']['method']
             )
         else:
             dff, dff_info = normalizer.calculate_dff(
-                processed_470, method='baseline_fit',
+                processed_470, baseline_method='baseline_fit',
                 percentile=config['normalization'].get('baseline_percentile', 10)
             )
         

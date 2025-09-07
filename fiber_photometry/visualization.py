@@ -23,7 +23,12 @@ class Visualizer:
     def __init__(self, style: str = "seaborn-v0_8", dpi: int = 300):
         self.style = style
         self.dpi = dpi
-        self._setup_style()
+    
+    def _safe_legend(self, ax):
+        """Add legend only if there are labeled artists."""
+        handles, labels = ax.get_legend_handles_labels()
+        if handles and labels:
+            ax.legend()
     
     def _setup_style(self):
         """Setup matplotlib style."""
@@ -87,7 +92,7 @@ class Visualizer:
         ax.set_xlabel('Time (s)')
         ax.set_ylabel('Fluorescence (AU)')
         ax.set_title(title)
-        ax.legend()
+        self._safe_legend(ax)
         ax.grid(True, alpha=0.3)
         
         plt.tight_layout()
@@ -213,7 +218,7 @@ class Visualizer:
         ax.set_xlabel('Time relative to event (s)')
         ax.set_ylabel('ΔF/F (baseline corrected)')
         ax.grid(True, alpha=0.3)
-        ax.legend()
+        self._safe_legend(ax)
         ax.axhline(y=0, color='black', linestyle='-', alpha=0.5)
         
         if title is None:
@@ -284,7 +289,7 @@ class Visualizer:
         ax.set_xlabel('Time relative to event (s)')
         ax.set_ylabel('ΔF/F (baseline corrected)')
         ax.set_title(title)
-        ax.legend()
+        self._safe_legend(ax)
         ax.grid(True, alpha=0.3)
         
         plt.tight_layout()
@@ -426,7 +431,7 @@ class Visualizer:
         ax1.set_xlabel('Time (s)')
         ax1.set_ylabel('ΔF/F')
         ax1.set_title(f"{title} - {len(transients)} transients detected")
-        ax1.legend()
+        self._safe_legend(ax1)
         ax1.grid(True, alpha=0.3)
         
         # Add summary statistics
@@ -462,7 +467,7 @@ class Visualizer:
             ax.set_xlabel('Amplitude (ΔF/F)')
             ax.set_ylabel('Count')
             ax.set_title('Transient Amplitude Distribution')
-            ax.legend()
+            self._safe_legend(ax)
             ax.grid(True, alpha=0.3)
     
     def _add_event_markers(self, ax, events_df: pd.DataFrame, time_vec: np.ndarray):
@@ -551,7 +556,7 @@ class Visualizer:
         ax_psth.set_xlabel('Time relative to event (s)')
         ax_psth.set_ylabel('ΔF/F (baseline corrected)')
         ax_psth.set_title('Event-Related Responses (PSTH)')
-        ax_psth.legend()
+        self._safe_legend(ax_psth)
         ax_psth.grid(True, alpha=0.3)
         
         # Summary statistics table (top right)
